@@ -1,7 +1,7 @@
 import React,{useRef} from 'react'
 import Card from '../ui/Card'
 
-export default function NewMeetupForm() {
+export default function NewMeetupForm({onAddMeetup}) {
     const titleRef = useRef();
     const imageRef = useRef();
     const addressRef = useRef();
@@ -21,8 +21,8 @@ export default function NewMeetupForm() {
             address: enteredAddress,
             description: enteredDescription
         }
-        console.log(meetupData)
 
+        onAddMeetup(meetupData);
     }
   return (
    <Card>
